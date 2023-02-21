@@ -2,15 +2,15 @@
 #include <unistd.h>
 
 /**
- * __putchar - writes the character c to stdout
- * c : The character to print
+ * __putchar - writes the character k to stdout
+ * @k: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int __putchar(char c)
+int __putchar(char k)
 {
-	return (write(1, &c, 1));
+	return (write(1, &k, 1));
 }
 /**
  * main -Entry point
