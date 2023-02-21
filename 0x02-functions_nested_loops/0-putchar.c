@@ -2,16 +2,13 @@
 #include <unistd.h>
 
 /**
- * __putchar - writes the character k to stdout
- * @k: The character to print
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int __putchar(char k)
-{
-	return (write(1, &k, 1));
-}
+int _putchar(char c);
 /**
  * main -Entry point
  *
@@ -23,7 +20,7 @@ int main(void)
 	int i;
 
 	for (i = 0; i < 8; i++)
-		__putchar(x[i]);
-	__putchar('\n');
+		_putchar(x[i]);
+	_putchar('\n');
 	return (0);
 }
