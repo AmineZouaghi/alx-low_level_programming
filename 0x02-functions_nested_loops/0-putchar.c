@@ -8,7 +8,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+int __putchar(char c)
 {
 	return (write(1, &c, 1));
 }
@@ -23,7 +23,7 @@ int main(void)
 	int i;
 
 	for (i = 0; i < 8; i++)
-		_putchar(x[i]);
-	_putchar('\n');
+		__putchar(x[i]);
+	__putchar('\n');
 	return (0);
 }
