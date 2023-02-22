@@ -1,17 +1,17 @@
 #include "main.h"
 
-/*
- * _abs: calculate abs value
+/**
+ * _abs -  Calculate abs value
  *
- * @int: a given int
+ * @i: a given int
  *
  * Return: the abs value
  */
 
-int _abs(int)
+int _abs(int i)
 {
-	if (int > 0) 
-		return int;
+	if (i > 0)
+		return (i);
 	else
-		return (-int);
+		return (-i);
 }
