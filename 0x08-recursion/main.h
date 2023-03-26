@@ -1,4 +1,5 @@
 void _puts_recursion(char *);
+int verif(int n, int i);
 int _putchar(char c);
 void _print_rev_recursion(char *s);
 int _strlen_recursion(char *s);
