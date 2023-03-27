@@ -1,53 +1,39 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * *str_concat - concatenates two strings
- *
- * @s1: a given string's pointer
- * @s2: a given string's pointer
- *
- * Return: the pointer of the new string
+ * str_concat - get ends of input and add together for size
+ * @s1: input one to concat
+ * @s2: input two to concat
+ * Return: concat of s1 and s2
  */
-
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0, k, p;
-	char *ptr;
-
-	while (*(s1 + i))
+	char *conct;
+	int i, ci;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	i = ci = 0;
+	while (s1[i] != '\0')
 		i++;
-	while (*(s2 + j))
-		j++;
-	k = j + i + 1;
-	ptr = malloc(k);
-	if (ptr == NULL)
+	while (s2[ci] != '\0')
+		ci++;
+	conct = malloc(sizeof(char) * (i + ci + 1));
+	if (conct == NULL)
 		return (NULL);
-	if (i == 0)
+	i = ci = 0;
+	while (s1[i] != '\0')
 	{
-		for (p = 0; p <= j; p++)
-			*(ptr + p) = *(s2 + p);
-		*(ptr + k) = '\0';
-		return (ptr);
+		conct[i] = s1[i];
+		i++;
 	}
-	if (j == 0)
+	while (s2[ci] != '\0')
 	{
-		for (p = 0; p <= i; p++)
-			*(ptr + p) = *(s1 + p);
-		*(ptr + k) = '\0';
-		return (ptr);
+		conct[i] = s2[ci];
+		i++, ci++;
 	}
-
-	if ((i + j) == 0)
-	{
-		*ptr = '\0';
-		return (ptr);
-	}
-	for (p = 0; p <= i; p++)
-		*(ptr + p) = *(s1 + p);
-	for (p = 0; p <= j; p++)
-		*(ptr + i + p) = *(s2 + p);
-	*(ptr + k) = '\0';
-	return (ptr);
+	conct[i] = '\0';
+	return (conct);
 }
