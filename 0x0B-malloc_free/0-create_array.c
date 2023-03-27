@@ -22,11 +22,16 @@ char *create_array(unsigned int size, char c)
 	else
 	{
 		arr =(char *) malloc(size);
-		while (i < size)
+		if (arr == 0)
+			Return (NULL);
+		else
 		{
-			*(arr + i) = c;
-			i++;
+			while (i < size)
+			{
+				*(arr + i) = c;
+				i++;
+			}
+			return(arr);
 		}
-		return(arr);
 	}
 }
