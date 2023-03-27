@@ -23,7 +23,7 @@ char *create_array(unsigned int size, char c)
 	{
 		arr =(char *) malloc(size);
 		if (arr == 0)
-			Return (NULL);
+			return (NULL);
 		else
 		{
 			while (i < size)
