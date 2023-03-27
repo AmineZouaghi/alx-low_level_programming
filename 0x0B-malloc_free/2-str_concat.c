@@ -22,6 +22,8 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	k = j + i + 1;
 	ptr = malloc(k);
+	if (ptr == NULL)
+		return (NULL);
 	if ((i + j) == 0)
 	{
 		*ptr = '\0';
